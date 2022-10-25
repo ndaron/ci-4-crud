@@ -37,6 +37,16 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'User::index');
 
+
+/**
+ * POST
+ */
+
+$routes->get('/blog', 'Post::index');
+$routes->get('/blog/category/(:any)', 'Post::category');
+$routes->get('/blog/category/(:any)/(:num)', 'Post::category');
+$routes->get('/blog/(:any)', 'Post::show');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
